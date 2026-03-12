@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prafful Jagtap CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @media print {
+      @page {
+        margin: 1.5cm;
+      }
+    }
+  </style>
+  <script src="components.js" defer></script>
+</head>
+
+<body
+  class="bg-gray-300 text-gray-900 font-sans antialiased flex flex-col items-center py-10 print:py-0 print:bg-white text-[10pt] leading-normal">
+  <div
+    class="w-[210mm] min-h-[297mm] bg-white shadow-2xl overflow-hidden print:shadow-none print:w-full print:h-auto print:block">
+
+    <div class="p-12 print:p-0 flex flex-col gap-8">
+
+      <!-- HEADER ROW -->
+      <header class="grid grid-cols-[2.5fr_1fr] gap-8">
+        <!-- Col 1 -->
+        <div>
+          <section>
+            <h1 class="text-[36pt] leading-[1.1] text-black uppercase tracking-wide">
+              <span class="font-normal">Prafful</span><br>
+              <span class="font-black">Jagtap</span>
+            </h1>
+            <h2 class="text-[12pt] font-extrabold tracking-[0.3em] text-gray-700 mt-4 uppercase">Senior Software
+              Engineer</h2>
+          </section>
+
+          <section class="mt-8">
+            <h3 class="text-[14pt] font-extrabold tracking-widest uppercase mb-3 text-black">Summary</h3>
+            <div class="border-l-2 border-gray-300 pl-4 text-[10pt] text-gray-600 leading-snug text-justify">
+              <p>Senior Software Engineer passionate about architecting scalable digital products through close
+                collaboration. With over 7 years of experience, I have successfully owned
+                features end-to-end, from initial planning to monitoring high-reliability production systems. I am a
+                tool-agnostic engineer committed to technical excellence and am currently leveraging AI-driven
+                development
+                to tackle sophisticated architectural hurdles.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="flex flex-col gap-4 h-full">
+          <section>
+            <profile-info label="Mobile" icon="fa-phone" value="+91-7620767396" link="tel:+917620767396"></profile-info>
+            <profile-info label="Email" icon="fa-envelope" value="prafful.jagtap1995@gmail.com"
+              link="mailto:prafful.jagtap1995@gmail.com"></profile-info>
+            <profile-info label="Web" icon="fa-globe" value="praffuljagtap.dev"
+              link="https://praffuljagtap.dev"></profile-info>
+            <profile-info label="Nationality" icon="fa-flag" value="Indian"></profile-info>
+            <profile-info label="LinkedIn" icon="fa-brands fa-linkedin" value="in/prafful-jagtap/"
+              link="https://www.linkedin.com/in/prafful-jagtap/"></profile-info>
+          </section>
+
+          <div class="w-full mt-0 flex-1 min-h-0 flex justify-center h-full">
+            <img src="assets/prafful.png" class="w-[90%] h-full rounded-xl object-cover" alt="Profile">
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT ROW -->
+      <main class="grid grid-cols-[2.5fr_1fr] gap-4">
+        <!-- Col 1 -->
+        <div>
+          <section class="flex flex-col gap-2">
+            <section-header title="Work Experience"></section-header>
+
+            <job-experience title="Senior Software Engineer" company="Commonwealth Bank of Australia (Unloan)"
+              date="09/2022 - 12/2025" location="Sydney, Australia">
+              <li>Engineered full-stack features for the In-Life customers of a digital home loan product called Unloan
+                using <strong>React Native</strong>, <strong>GraphQL</strong>, <strong>Azure</strong>,
+                <strong>PostgreSQL</strong> and <strong>Node.js</strong>
+              </li>
+              <li>Collaborated with product and design to plan and build a user-friendly, scalable and reliable product
+              </li>
+              <li>Made significant contributions to the serverless architecture and event-driven systems such as
+                implementing caching strategies to boost API performance and improve UX</li>
+              <li>Solved complex business problems such as automating manual business processes and reducing on-call
+                engineering efforts</li>
+              <li>Built idempotent systems handing millions in transactions per week</li>
+              <li>Implemented various automated tests such as unit, integration and acceptance tests. Also performed
+                load testing to ensure reliability of production systems when processing large operations</li>
+              <li>Owned features end-to-end from participating in planning sessions to setting up and monitoring alerts,
+                ensuring systems are highly reliable</li>
+            </job-experience>
+
+            <job-experience title="Software Developer" company="Kinela" date="11/2021 - 06/2022"
+              location="Sydney, Australia">
+              <li>Built products for people with disabilities (clients) by collaborating and planning with product and
+                therapists</li>
+              <li>Planned and developed a mobile application for patients to capture feedback on their online therapy
+                sessions using
+                <strong>Flutter</strong>, <strong>Node.js</strong>, <strong>Firebase</strong>, <strong>GraphQL</strong>
+                and <strong>PostgreSQL</strong>
+              </li>
+              <li>Collaborated with the CTO and senior developer to participate in architectural decisions</li>
+              <li>Lead the front-end development and designed the backend schema of the feedback capturing application
+              </li>
+            </job-experience>
+
+            <job-experience title="Full Stack Engineer" company="Nine" date="02/2021 - 10/2021"
+              location="Sydney, Australia">
+              <li>Built pages for various campaigns on the Australian Financial Review web app using
+                <strong>React</strong> with
+                <strong>TypeScript</strong>
+              </li>
+              <li>Worked on special projects such as the AFR 70th Anniversary to build a dark themed timeline of the
+                company</li>
+              <li>Performed various other engineering tasks such as deploying and maintaining <strong>AWS S3</strong>
+                buckets using
+                <strong>Infrastructure as Code</strong>, building features and fixing bugs in
+                <strong>microservices</strong> (backends) using <strong>Golang</strong>
+              </li>
+            </job-experience>
+
+            <job-experience title="Software Consultant" company="Transfinite Innovative Solutions Pvt. Ltd."
+              date="03/2018 - 12/2018" location="Mumbai, India">
+              <li>Built mobile applications and dashboards using <strong>Ionic</strong>, <strong>Angular</strong> and
+                <strong>Node.js</strong> for internal use within the
+                company
+              </li>
+              <li>Designed and developed a social awareness application scaling to over 30,000 active users</li>
+              <li>Mentored juniors and interns helping them up-skill in modern technologies by assigning them tasks,
+                reviewing their work and asking to review mine as a practice</li>
+            </job-experience>
+
+            <job-experience title="Associate Software Developer" company="Centillion" date="06/2017 - 12/2017"
+              location="Navi Mumbai, India">
+              <li>Worked for an outsourcing agency mostly on backend projects</li>
+              <li>Revamped complete backends using <strong>Laravel</strong> and <strong>MySQL</strong></li>
+              <li>Built admin dashboards for our clients using <strong>Angular</strong></li>
+            </job-experience>
+          </section>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="flex flex-col gap-4">
+          <section class="flex flex-col gap-2">
+            <section-header title="Education"></section-header>
+
+            <education-item degree="Master of Computer Science" field="Machine Learning and Big Data"
+              institution="University of Wollongong, Australia" date="2019 - 2020"
+              degree-link="https://www.uow.edu.au/study/courses/master-of-computer-science/"
+              institution-link="https://www.uow.edu.au/">
+            </education-item>
+
+            <education-item degree="Bachelor of Science" field="Computer Science"
+              institution="University of Mumbai, India" date="2014 - 2017"
+              degree-link="https://siesascs.edu.in/departments.php?action=view&department_id=55"
+              institution-link="https://www.mu.ac.in/">
+            </education-item>
+          </section>
+
+          <section class="flex flex-col gap-2">
+            <section-header title="Technical Skills"></section-header>
+
+            <skill-group>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Git</li>
+              <li>Go</li>
+              <li>React Native</li>
+              <li>React.js</li>
+              <li>Next.js</li>
+              <li>Nest.js</li>
+              <li>Express.js</li>
+              <li>Flutter</li>
+              <li>Ionic</li>
+              <li>NativeScript</li>
+              <li>Angular</li>
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>GCP</li>
+              <li>MongoDB</li>
+              <li>SQL</li>
+              <li>NoSQL</li>
+              <li>GitHub</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>REST APIs</li>
+              <li>Docker</li>
+              <li>Rust</li>
+              <li>GraphQL</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>Dart</li>
+              <li>Swift</li>
+              <li>Kotlin</li>
+            </skill-group>
+          </section>
+
+          <section class="flex flex-col gap-2">
+            <section-header title="Professional Skills"></section-header>
+
+            <skill-group>
+              <li>Ownership</li>
+              <li>Feature Planning</li>
+              <li>Collaboration</li>
+              <li>Communication</li>
+              <li>Product Mindset</li>
+              <li>Team Player</li>
+              <li>Autonomy</li>
+              <li>Leadership</li>
+            </skill-group>
+          </section>
+
+          <section class="flex flex-col gap-2">
+            <section-header title="Languages"></section-header>
+            <language-item language="English" fluency="Fluent" level="5"></language-item>
+            <language-item language="Hindi" fluency="Native" level="5"></language-item>
+            <language-item language="Marathi" fluency="Native" level="5"></language-item>
+            <language-item language="German" fluency="Basic" level="1"></language-item>
+          </section>
+
+          <section class="flex flex-col gap-2">
+            <section-header title="Achievements"></section-header>
+            <ul class="list-disc pl-4 text-[11px] text-gray-600 space-y-1">
+              <li><strong>Career</strong> - Received multiple recognitions for demonstrating company values - Care,
+                Courage
+                and Commitment</li>
+              <li><strong>Academics (Masters)</strong> - Awarded High Distinction in <u>Database
+                  Systems</u></li>
+              <li><strong>Academics (Bachelors)</strong> - Awarded High Distinction in <u>Computer Science</u>, <u>Web
+                  Design</u>
+                and <u>Mathematics</u></li>
+            </ul>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+  </div>
+</body>
+
+</html>
