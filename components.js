@@ -39,27 +39,44 @@ customElements.define('job-experience', JobExperience);
 
 class SkillGroup extends HTMLElement {
   connectedCallback() {
-    let items = [];
     const contentHtml = this.innerHTML;
+    const temp = document.createElement('div');
+    temp.innerHTML = contentHtml;
+    const lis = temp.querySelectorAll('li');
 
-    if (contentHtml.includes('<li>')) {
-      const temp = document.createElement('div');
-      temp.innerHTML = contentHtml;
-      const lis = temp.querySelectorAll('li');
-      lis.forEach(li => items.push(li.textContent.trim()));
+    // Icon mode: if any <li> has an icon attribute, render as icon+label rows
+    const hasIcons = Array.from(lis).some(li => li.hasAttribute('icon'));
+
+    if (hasIcons) {
+      const rowsHtml = Array.from(lis).map(li => {
+        const icon = li.getAttribute('icon') || 'fa-circle-check';
+        const label = li.textContent.trim();
+        return `
+          <li class="flex items-center gap-2 py-1.5 border-b border-dashed border-gray-300 last:border-b-0">
+            <div class="w-5 flex-shrink-0 text-center">
+              <i class="fa-solid ${icon} text-gray-700 text-[13px]"></i>
+            </div>
+            <span class="text-[11px] font-semibold text-gray-800">${label}</span>
+          </li>
+        `;
+      }).join('');
+
+      this.innerHTML = `<ul>${rowsHtml}</ul>`;
     } else {
-      items = contentHtml.split(',').map(item => item.trim()).filter(Boolean);
+      // Pill-badge mode (default)
+      let items = [];
+      if (lis.length > 0) {
+        lis.forEach(li => items.push(li.textContent.trim()));
+      } else {
+        items = contentHtml.split(',').map(item => item.trim()).filter(Boolean);
+      }
+
+      const lisHtml = items.map(item => `
+        <li class="bg-slate-50 border border-slate-200 text-slate-700 px-3 py-1.5 rounded-md text-[11px] font-medium whitespace-nowrap">${item}</li>
+      `).join('');
+
+      this.innerHTML = `<ul class="flex flex-wrap gap-2">${lisHtml}</ul>`;
     }
-
-    const lisHtml = items.map(item => `
-      <li class="bg-slate-50 border border-slate-200 text-slate-700 px-3 py-1.5 rounded-md text-[11px] font-medium whitespace-nowrap">${item}</li>
-    `).join('');
-
-    this.innerHTML = `
-      <ul class="flex flex-wrap gap-2">
-        ${lisHtml}
-      </ul>
-    `;
   }
 }
 
@@ -77,7 +94,7 @@ class LanguageItem extends HTMLElement {
     }).join('');
 
     this.innerHTML = `
-      <div class="flex justify-between items-center py-1.5 border-b border-dashed border-gray-300">
+      <div class="flex justify-between items-center">
         <div class="flex flex-col justify-center">
           <span class="text-[11px] font-bold text-gray-800">${language}</span>
           <span class="text-[10px] text-gray-500">${fluency}</span>
@@ -160,3 +177,24 @@ class SectionHeader extends HTMLElement {
 
 customElements.define('section-header', SectionHeader);
 
+class AchievementItem extends HTMLElement {
+  connectedCallback() {
+    const icon = this.getAttribute('icon') || 'fa-star';
+    const title = this.getAttribute('title') || '';
+    const description = this.innerHTML.trim();
+
+    this.innerHTML = `
+      <div class="flex items-start gap-2 border-b border-dashed border-gray-300 last:border-b-0">
+        <div class="mt-0.5 w-5 flex-shrink-0 text-center">
+          <i class="fa-solid ${icon} text-gray-700 text-[16px]"></i>
+        </div>
+        <div class="flex flex-col gap-0.5">
+          <span class="text-[11px] font-bold text-gray-800">${title}</span>
+          <span class="text-[10px] text-gray-500 leading-snug">${description}</span>
+        </div>
+      </div>
+    `;
+  }
+}
+
+customElements.define('achievement-item', AchievementItem);
